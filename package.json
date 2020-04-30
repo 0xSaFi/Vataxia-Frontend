@@ -5,7 +5,9 @@
   "scripts": {
     "build": "NODE_ENV=production webpack --progress --verbose",
     "start": "webpack-dev-server --config webpack.config.dev.js",
-    "test": "jest"
+    "test": "jest",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "license": "ISC",
   "dependencies": {
@@ -40,12 +42,14 @@
     "webpack": "^2.3.3",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-dev-server": "^2.4.2",
-    "webpack-hot-middleware": "^2.18.0"
+    "webpack-hot-middleware": "^2.18.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-plugin-react-transform": "^2.0.2",
     "babel-preset-stage-0": "^6.24.1",
     "jest": "^20.0.4",
     "react-transform-hmr": "^1.0.4"
-  }
+  },
+  "snyk": true
 }
